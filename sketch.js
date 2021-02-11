@@ -10,7 +10,7 @@ let angle = 250;
 
 
 function setup(){
-    alert("The formal elements of this preoject are color and the movement of the squares. The user will be able to manipulate the size shape and colors of squares.\nHere are the controls: \n - Mouse Position will change the size of the shaking square \n - UP Arrow (pink & purple) \n - Down Arrow (purple & pink) \n - Left Arrow (yello & blue) \n - Right Arrow (blue & yellow) \n - Any Other key (all black)");
+    alert("The formal elements of this project are color and the movement of the squares. The user will be able to manipulate the size and colors of squares.\nHere are the controls: \n - Mouse Position will change the size of the shaking square \n - UP Arrow (pink & purple) \n - Down Arrow (purple & pink) \n - Left Arrow (yellow & blue) \n - Right Arrow (blue & yellow)\n - Enter (random colors) \n - Any Other key (all black)");
     createCanvas (windowWidth,windowHeight);
     PosX = random(0, windowWidth);
     PosY = random(0, windowHeight);
@@ -24,11 +24,16 @@ function draw(){
     
     let r1 = map(mouseY, 0, width, 0, height);
     let r2 = map(mouseX, 0, width, 0, height);
-   
     translate(PosX,PosY);
     fill(0);
     stroke(120);
+  
 ///colors for square
+
+    if (keyCode === ENTER)
+    {
+      fill(random(0,255),random(0,255),random(0,255));
+    }
     if (keyCode === UP_ARROW) 
     {
         fill(121, 72, 162);
@@ -48,6 +53,10 @@ function draw(){
       
 /// colors for rectangle 
       fill(0);
+      if (keyCode === ENTER)
+    {
+      fill(random(0,255),random(0,255),random(0,255));
+    }
     if (keyCode === UP_ARROW) 
     {
         fill(232,142,214);
